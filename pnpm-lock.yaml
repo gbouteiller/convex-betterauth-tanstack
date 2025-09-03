@@ -63,9 +63,6 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
     devDependencies:
-      '@fontsource/geist-mono':
-        specifier: ^5.2.6
-        version: 5.2.6
       '@fontsource/geist-sans':
         specifier: ^5.2.5
         version: 5.2.5
@@ -595,9 +592,6 @@ packages:
 
   '@fastify/busboy@3.2.0':
     resolution: {integrity: sha512-m9FVDXU3GT2ITSe0UaMA5rU3QkfC/UXtCU8y0gSN/GugTqtVldOBWIB5V6V3sbmenVZUIpU6f+mPEO2+m5iTaA==}
-
-  '@fontsource/geist-mono@5.2.6':
-    resolution: {integrity: sha512-I3hsRP+8Gmhk35cwlPAR4w5xqk7e5pro2F1o51ZmB+lN+dPcwN3jYHKN+u0E5AMuiQKpTdkrqfEpvBjzQax3cQ==}
 
   '@fontsource/geist-sans@5.2.5':
     resolution: {integrity: sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A==}
@@ -4015,8 +4009,6 @@ snapshots:
 
   '@fastify/busboy@3.2.0':
     optional: true
-
-  '@fontsource/geist-mono@5.2.6': {}
 
   '@fontsource/geist-sans@5.2.5': {}
 
