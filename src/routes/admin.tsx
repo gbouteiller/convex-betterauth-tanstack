@@ -30,7 +30,7 @@ function RouteComponent() {
 	const email = usePreloadedQuery(preloaded);
 
 	const navigate = useNavigate();
-	const handleClick = useCallback(() => void authClient.signOut({}, { onSuccess: () => navigate({ to: "/" }) }), [navigate]);
+	const handleClick = useCallback(() => authClient.signOut({}, { onSuccess: () => navigate({ to: "/" }) }), [navigate]);
 
 	return (
 		<div className="flex flex-col gap-2">
