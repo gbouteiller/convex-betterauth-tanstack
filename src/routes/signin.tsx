@@ -8,18 +8,21 @@ import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 import { getCookieName } from "@/lib/auth-server-utils";
 
-const authStateFn = createServerFn({ method: "GET" }).handler(async () => {
+// SERVER **********************************************************************************************************************************
+const ensureUnauthenticatedFn = createServerFn({ method: "GET" }).handler(async () => {
 	const sessionCookieName = await getCookieName();
 	const token = getCookie(sessionCookieName);
 	if (token) redirect({ to: "/admin" });
 });
 
+// ROUTE ***********************************************************************************************************************************
 export const Route = createFileRoute("/signin")({
-	beforeLoad: async () => await authStateFn(),
-	component: RouteComponent,
+	beforeLoad: async () => await ensureUnauthenticatedFn(),
+	component: SigninPage,
 });
 
-function RouteComponent() {
+// ROOT ************************************************************************************************************************************
+function SigninPage() {
 	const [flow, setFlow] = useState<"signIn" | "signUp">("signIn");
 	const [error, setError] = useState<string | null>(null);
 	const navigate = useNavigate();
@@ -37,7 +40,7 @@ function RouteComponent() {
 				: authClient.signUp.email({ ...data, name: "Gregory Bouteiller" }, opts));
 		},
 		[flow, navigate],
-	)
+	);
 
 	return (
 		<div className="flex flex-col gap-8 w-96 mx-auto h-screen justify-center items-center">
@@ -60,5 +63,5 @@ function RouteComponent() {
 				)}
 			</form>
 		</div>
-	)
+	);
 }
