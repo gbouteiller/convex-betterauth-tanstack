@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
 import { ThemeProvider } from "@/lib/theme";
 import appCss from "@/styles/app.css?url";
+import "@fontsource/geist-sans";
 
 export const Route = createRootRouteWithContext<{ convex: ConvexReactClient; convexServer: ConvexHttpClient }>()({
 	head: () => ({
